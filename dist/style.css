@@ -47,3 +47,6 @@ dialog{overscroll-behavior:contain}dialog::backdrop{animation:backdrop-in 220ms 
 #detail .close:hover{background:var(--green);color:var(--cream)}
 #detail .close:focus-visible{outline:2px solid var(--green);outline-offset:4px}
 @media(max-width:420px){.card-text h3{gap:7px}.product-arrow{flex-basis:32px;width:32px;height:32px}.product-arrow .ui-icon{width:18px;height:18px}.contact-links .contact-button{padding:13px 17px}}
+
+/* Consistent line icons for every landing-page navigation control. */
+.ui-icon.inline-icon{display:inline-block;vertical-align:middle}.hero .inline-icon{width:22px;height:22px}.story a .inline-icon,.venture-grid button .inline-icon,footer a .inline-icon,#show-more .inline-icon{margin-left:8px;width:20px;height:20px}.search .inline-icon,.menu-toggle .inline-icon{width:20px;height:20px}
