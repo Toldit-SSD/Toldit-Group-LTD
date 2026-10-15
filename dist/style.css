@@ -27,3 +27,5 @@ dialog{overscroll-behavior:contain}dialog::backdrop{animation:backdrop-in 220ms 
 
 /* Direct contact for development-stage enquiries. */
 .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.partner .contact-links{justify-content:center}.contact-details a{overflow-wrap:anywhere;text-underline-offset:4px}.contact-details{line-height:1.9}#shortlist .contact-links .button{margin:0}#contact{scroll-margin-top:100px}
+
+#inquiry-options[hidden]{display:none}#inquiry-options .contact-links{gap:12px}#inquiry-options .button{margin:0}#inquiry-options{margin-top:20px}
