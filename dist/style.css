@@ -29,3 +29,21 @@ dialog{overscroll-behavior:contain}dialog::backdrop{animation:backdrop-in 220ms 
 .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}.partner .contact-links{justify-content:center}.contact-details a{overflow-wrap:anywhere;text-underline-offset:4px}.contact-details{line-height:1.9}#shortlist .contact-links .button{margin:0}#contact{scroll-margin-top:100px}
 
 #inquiry-options[hidden]{display:none}#inquiry-options .contact-links{gap:12px}#inquiry-options .button{margin:0}#inquiry-options{margin-top:20px}
+
+/* Approved contact and product controls: SVG icons render consistently on mobile. */
+.ui-icon{display:block;flex:none;width:22px;height:22px;pointer-events:none}
+.card-text h3{align-items:flex-start;gap:10px;line-height:1.45}
+.product-arrow{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border:1px solid currentColor;border-radius:50%;transition:background-color var(--motion),color var(--motion)}
+.card:hover .product-arrow{background:var(--green);color:var(--cream)}
+.contact-links .contact-button{justify-content:center;gap:10px;min-height:48px;padding:13px 22px;border-radius:999px;font-weight:500;white-space:nowrap;margin:0}
+.contact-links .contact-email{background:var(--green);color:var(--cream)}
+.contact-links .contact-email:hover{background:#27543c}
+.partner .contact-links .contact-email{background:var(--cream);color:var(--green)}
+.partner .contact-links .contact-email:hover{background:#e7eadf}
+.contact-links .contact-whatsapp{background:#087f5b;color:#fff}
+.contact-links .contact-whatsapp:hover{background:#066548}
+#detail{padding-top:72px}
+#detail .close{top:16px;right:16px;width:44px;height:44px;padding:0;border:1px solid #173d2b55;border-radius:50%;background:var(--cream);color:var(--green);box-shadow:0 2px 8px #173d2b08}
+#detail .close:hover{background:var(--green);color:var(--cream)}
+#detail .close:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+@media(max-width:420px){.card-text h3{gap:7px}.product-arrow{flex-basis:32px;width:32px;height:32px}.product-arrow .ui-icon{width:18px;height:18px}.contact-links .contact-button{padding:13px 17px}}
