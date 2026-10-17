@@ -2,22 +2,30 @@ const $ = s => document.querySelector(s);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const escape = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let category='All products',limit=12;
+const normalize = value => String(value).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+function matchesSearch(p,query){const aliases={'Food & drink':'food drinks','Home & care':'home household care cleaning','Fragrances':'perfume perfumes fragrance','Apparel & gear':'clothing clothes bags','Technology':'tech electronics','Education':'school stationery'};const text=normalize([p.name,p.description,p.category,p.format,p.origin||'',aliases[p.category]||'',/peanut/i.test(p.name)?'groundnut groundnuts':''].join(' '));return normalize(query).split(/\s+/).filter(Boolean).every(word=>text.includes(word));}
+function restoreCatalogue(){const params=new URLSearchParams(location.search);category=categories.includes(params.get('category'))?params.get('category'):'All products';$('#catalog-sort').value=['az','za'].includes(params.get('sort'))?params.get('sort'):'featured';}
+function saveCatalogue(){const url=new URL(location.href);category==='All products'?url.searchParams.delete('category'):url.searchParams.set('category',category);const sort=$('#catalog-sort').value;sort==='featured'?url.searchParams.delete('sort'):url.searchParams.set('sort',sort);history.replaceState(null,'',url);}
 const categories=['All products',...new Set(PRODUCTS.map(p=>p.category))];
 function animate(el,frames,options={}) {if(reduced.matches||!el.animate)return;const a=el.animate(frames,{duration:260,easing:'cubic-bezier(.2,.7,.2,1)',...options});return a;}
 function artwork(p){return p.image?`<img src="${escape(p.image)}" alt="${escape(p.name)} — Toldit branded concept render" width="800" height="800" loading="lazy" decoding="async">`:`<div class="placeholder"><b>TOLDIT</b><span>${escape(p.name)}</span></div>`;}
 $('#filters').innerHTML=categories.map(c=>`<button aria-pressed="false" data-filter="${escape(c)}">${escape(c)}</button>`).join('');
 function render(append=false){
  const query=$('#search').value.trim().toLowerCase();
- const found=PRODUCTS.filter(p=>(category==='All products'||p.category===category)&&[p.name,p.description,p.category,p.format].join(' ').toLowerCase().includes(query));
- $('#filters').querySelectorAll('button').forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});
- $('#results').textContent=`${found.length} ${found.length===1?'product':'products'} to explore`;
+ const matches=PRODUCTS.filter(p=>matchesSearch(p,query));
+ const found=matches.filter(p=>category==='All products'||p.category===category);
+ const sort=$('#catalog-sort').value;if(sort!=='featured')found.sort((a,b)=>sort==='az'?a.name.localeCompare(b.name):b.name.localeCompare(a.name));
+ $('#clear-filters').hidden=category==='All products'&&!query&&sort==='featured';
+ saveCatalogue();
+ $('#filters').querySelectorAll('button').forEach(b=>{const active=b.dataset.filter===category;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);const count=matches.filter(p=>b.dataset.filter==='All products'||p.category===b.dataset.filter).length;b.textContent=b.dataset.filter+' ('+count+')';});
+ $('#results').textContent=`Showing ${Math.min(limit,found.length)} of ${found.length} ${found.length===1?'concept':'concepts'}${category==='All products'?'':' in '+category}`;
  const previous=append?$('#grid').children.length:0;
  const html=found.slice(previous,limit).map(p=>`<article class="card"><button data-id="${p.id}" aria-label="Explore ${escape(p.name)}"><div class="card-image">${artwork(p)}<span class="tag">IN DEVELOPMENT</span></div><div class="card-text"><small>${escape(p.category)}</small><h3>${escape(p.name)}<span class="product-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></h3><p>${escape(p.format)}</p></div></button>${p.url?`<a class="full-product-link" href="${escape(p.url)}">Full product details</a>`:""}</article>`).join('');
  if(append)$('#grid').insertAdjacentHTML('beforeend',html);else $('#grid').innerHTML=html||'<div class="empty-state"><h3>No products found</h3><p>Try a different name or explore the full collection.</p><button class="outline" id="reset-search">Reset filters and search</button></div>';
  const cards=[...$('#grid').querySelectorAll('.card')].slice(previous);
  cards.forEach((card,i)=>animate(card,[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{delay:Math.min(i*25,180)}));
  $('#show-more').hidden=found.length<=limit;
- if(append){cards[0]?.querySelector('button').focus({preventScroll:true});$('#results').textContent+=`. Showing ${Math.min(limit,found.length)}.`;}
+ if(append){cards[0]?.querySelector('button').focus({preventScroll:true});}
 }
 const returnFocus=new WeakMap(),closing=new WeakMap();
 function openDialog(d){if(d.open)return;returnFocus.set(d,document.activeElement);document.body.classList.add('dialog-open');d.showModal();animate(d,[{opacity:0,transform:'translateY(12px) scale(.98)'},{opacity:1,transform:'translateY(0) scale(1)'}]);}
@@ -33,8 +41,12 @@ function detail(id){
 }
 $('#filters').onclick=e=>{const b=e.target.closest('[data-filter]');if(b){category=b.dataset.filter;limit=12;render();}};
 $('#search').oninput=()=>{limit=12;render();};
+$('#catalog-sort').onchange=()=>{limit=12;render();};
+function resetCatalogue(){category='All products';limit=12;$('#search').value='';$('#catalog-sort').value='featured';render();$('#search').focus();}
+$('#clear-filters').onclick=resetCatalogue;
+addEventListener('popstate',()=>{restoreCatalogue();limit=12;render();});
 $('#show-more').onclick=()=>{limit+=12;render(true);};
-$('#grid').onclick=e=>{if(e.target.closest('#reset-search')){category='All products';limit=12;$('#search').value='';render();$('#search').focus();return;}const b=e.target.closest('[data-id]');if(b)detail(Number(b.dataset.id));};
+$('#grid').onclick=e=>{if(e.target.closest('#reset-search')){resetCatalogue();return;}const b=e.target.closest('[data-id]');if(b)detail(Number(b.dataset.id));};
 document.querySelectorAll('[data-venture]').forEach(b=>b.onclick=()=>detail(PRODUCTS.find(p=>p.name===b.dataset.venture)?.id));
 document.querySelectorAll('dialog').forEach(d=>{d.querySelector('.close').onclick=()=>closeDialog(d);d.addEventListener('cancel',e=>{e.preventDefault();closeDialog(d);});d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog(d);}});});
 const menu=$('#menu-toggle'),nav=$('#main-nav');
@@ -48,5 +60,5 @@ let ticking=false;function updateNav(){ticking=false;const sections=['catalog','
 addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateNav);}},{passive:true});
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){animate(e.target,[{opacity:.3,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],{duration:320});observer.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll('.section-head,.values article,.venture-grid article,.story h2,.partner h2').forEach(el=>observer.observe(el));}
 reduced.addEventListener('change',()=>{if(reduced.matches)document.getAnimations().forEach(a=>a.finish());});
-render();updateNav();animate($('.hero-copy'),[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:350});
+restoreCatalogue();render();updateNav();animate($('.hero-copy'),[{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:350});
 
