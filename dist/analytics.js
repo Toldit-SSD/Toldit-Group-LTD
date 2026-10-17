@@ -1,9 +1,9 @@
-/* Activation is pending access to the Vercel project and verification of its plan.
-   Fill scriptPath with the exact Web Analytics script URL shown by that project.
-   Custom events require a plan that supports them. Never record inquiry text,
+/* Page-view analytics enabled on the existing Vercel Hobby project.
+   Custom events remain disabled: this plan does not support them.
+   Never record inquiry text,
    contact destinations or visitors' search terms. */
 (() => {
-  const config = { enabled: false, customEvents: false, scriptPath: '' };
+  const config = { enabled: true, customEvents: false, scriptPath: '/_vercel/insights/script.js' };
   if (!config.enabled || !config.scriptPath || navigator.doNotTrack === '1') return;
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   window.va('beforeSend', event => {
@@ -20,3 +20,4 @@
     window.va('event', { name: 'Inquiry click', data: { channel: link.classList.contains('contact-email') ? 'Email' : 'WhatsApp', product: product || 'General inquiry' } });
   });
 })();
+
