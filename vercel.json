@@ -1,1 +1,33 @@
-{"framework":null,"buildCommand":"","installCommand":"","outputDirectory":"dist"}
+{
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' https://www.googletagmanager.com 'sha256-/8IIMGxgBIYF59L2PFJzWqEX4nMr0i4MmyCkZxa4dCA=' 'sha256-0zoYAXxFRvPiD8NN9J51OR71KdW0grhl/owCPi9RTs8=' 'sha256-10fyMWC8G5rGrAw14WiK78ab8Nk5Ku1cMx8jkvI9wwU=' 'sha256-2FoDEE5vs7rqkrgvVmgCJmrsA5e9RNh0h1Wtd42ErcE=' 'sha256-4VjT34J9bzzy/n4TY7ZgpR1wgm9OtamOSsJnzdTWrjU=' 'sha256-4WRpipKkumP725fP1Va4WA/oPMaQYU9mvDNHKclnnUg=' 'sha256-51o3jaHDcCPi1dTv0DtjTtiDcUkQWyg9epSzpIRAqGA=' 'sha256-6HauHl1Jq5nRlygHNbYVC3QgFnvuJWKcocUJ0UTvCn0=' 'sha256-7MnUe55ZbT1Kj6TNk33vlYR0ostVt/A77A8VmfY+ZEw=' 'sha256-8G4RGNQ3+JPXMK4L9RoKrA22fnBtWkREkf4WwVO7hEQ=' 'sha256-8dpzAMX9qC6HIPC3wQuIRxYaHToYKyXbDBcaucfdE4I=' 'sha256-9zE4J7y3qPj7EQYu6HjilWOEDUVZOIXU7SnlnXiqS6Y=' 'sha256-BIHEyFB7rVtxYIb5deIi2wpTmXbLR7qLPXNajYzJz3I=' 'sha256-Be7UJJfT1YM/nulv6QPFKLLW0udcUiKWZpA2kRWnQG4=' 'sha256-BmW745UT/ZZcorIFNpwElMeymjBUDp65wuTPeYgZgi0=' 'sha256-C8lp92l1drMWfjVxgb+5Ypa8PLTcOhnEvmMEh/nyBgA=' 'sha256-Ds1dPOdkE6/xh6DaCt2k56uMgoPiRIWIrF5n6QNJeFA=' 'sha256-F6U86F9o+B2Kn3xdrvL+T1hX4THTysuScLZY6MR5Ano=' 'sha256-H2/00n+yTXzloSYWDdGG/CwE90mNtOn9M158i66kwY8=' 'sha256-HerfFVDFH28eJoGXNr85EWNn7Q7GSp+F9oWixESCNHg=' 'sha256-JOhHzGaXuStuiWXQwLjr9rMwoqZR2DTM5sUfU3NvuaQ=' 'sha256-K92pi6pqjtsH/HQReW6g/b7nTbd9nYDIMjGX14326/k=' 'sha256-LVro/+U+nZtdeE1yOgR1JEi+z+ofNzO+/Q0ct0odh4U=' 'sha256-N9bM1ccKXlX4Zu/Z0NfVTkDX5Q72pEhD+Klhamqs5CQ=' 'sha256-O4OlN7ZJJ84piO5t735i4nUZEcaFjmCH/AVoEvLWIvg=' 'sha256-QMdG98yBPzDFOAXXQ9V4u6f+vPcnVo7FnOC83SrK5Pw=' 'sha256-RuV48LenhdlbDX4y/AJ+xMGMPVM/NPAtDwP70Sy00aE=' 'sha256-Saxq3XNNRz3NeUtXJ4QyzFC3DmbJZg6y5uZVg6sOVI4=' 'sha256-TT8X4gszzRBgelotQyJUZrp0y40JdhLCESp8wyGO1z8=' 'sha256-VdRLtW8E6lvVl3Xa8Z2SJbS46cs4gIencuUK/lm0mAg=' 'sha256-VlvkdVQJmbudx5Iz3YGGoIex/Dj+M1JLiegB3udtDOI=' 'sha256-WkooNAycGTAEhrtlDQVV66JVOgxrSnHmQ8LtEgfV7xM=' 'sha256-XhJgF3rMGDyGj+HslnRPIifm+hOGcxnvhSdwVlY7P5Q=' 'sha256-YBZSTHLKWJk5dN8b3xzWgpMX+bsCWnWeeXyXSDfqWXc=' 'sha256-YMOr4sp+VxOftP+E4aQ4tUjU/zPbCcmWwf3vTr9oWfM=' 'sha256-YoH/Hmi27PjhP082A32096bKKzeEkldYnmILedBgEwQ=' 'sha256-ZapWDeTEEn1w580JUyDooogRkfmIw6z/ixtPDXQDBVg=' 'sha256-b2hN9RcUSzkPGHMeULkxxNTcA1Eo/Sgtp4wWAXEPwOk=' 'sha256-clHnLRyYVufbfeWOY3JHK65pHuhxRlQ2Ot3ZEG/+yTA=' 'sha256-d7b6/ggIPCM30/0gtwlTSHfelVycjwOg84/Rg9i230k=' 'sha256-diQHuYNbBq7bEbdirPczllj7O54vYX9g01/cAgIKoZ4=' 'sha256-h6sZ87F9I6USsh4+mX+SE279pNzn265s6pxy4tjn9+I=' 'sha256-hlF1d2ez5T3LQtta6DL1xEQzpw6m1UHQX+pPaPXHfQQ=' 'sha256-i/vrTY1ssmlqsP9jv3/jNJ0NLNUD/idJ+/pLtu1Ea0Y=' 'sha256-ieBlAQJvOCAjNp2HdOrnpd7ECCGWA0j652IhmGDRCOo=' 'sha256-j+B2Zwg2h8yFCWK5Bq3En8NlMklVXLMWUjzQoUIOloE=' 'sha256-j93rAtUfKPH2CAjITPx08KlvEm/f4TcyX/P/skMKMQM=' 'sha256-n8uv/YfwKHgoPvLpM9VQGoKRqQfDt/iTbB5SFf+naiU=' 'sha256-nBny/vnSiTED3xSTv38XDK7R7AFbbOkaX/ycLYnaJlo=' 'sha256-nKDcjT3G8YA7gnKiZPjbrKKaKqcinwT2A+PNcadDvug=' 'sha256-nKwRQfGheEet/gnW5paXXwLsmwTKiv3FWD72qogXma4=' 'sha256-nRxQGY3UiRZZDAtPY3W84VoyDlVT8TjSZD4wZSTFSUo=' 'sha256-o5ilFNoB2rr+4/hIsIB9YLJdXr+CfwD1HwkUZXlQpX0=' 'sha256-pYAdCqh6kG1Fc9YX51T9FlLjjvk3w9iOo0ZA7qkBxG4=' 'sha256-r5pYe5bKAyKxuqPHQoa1iUj4EGTQzqgL24UX4Da2cWA=' 'sha256-sMaTD8fAk4J5AWxpoRdktRJBX2EZjWCxS+o91+lxAOU=' 'sha256-uwF4I+UULmFi/bTO8b6BJtRcZwZa91Rt91yCtM0MQY0=' 'sha256-wL9Y7thviKHSkHfvntK22mASVg8c5wsFARt/BR41HmQ=' 'sha256-yGC1LtS+YtjME/Ju+0Bfi7Na72icywLY3WUbBsWtnyc=' 'sha256-ztxMGMkY/WLA3KfsDEwIHezCWLLI9ePoyRZhBzKYotM='; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://vitals.vercel-insights.com; frame-src 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}
