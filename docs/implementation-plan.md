@@ -17,11 +17,11 @@ No production deployment, DNS, production migrations, paid API calls, secret ins
 5. Keyboard, reduced motion and 390/768/1440 widths: focus remains visible, no overflow or hidden navigation.
 
 ## Tasks
-- [ ] Baseline: existing tests/typecheck/lint/build, route and record hashes, desktop/mobile captures and local lab timings.
-- [ ] OS: pure briefing/Orbit state tests first; add reusable TolditOrbit, OrbitVoiceControls, voice hook and DailyBriefingPanel. Upgrade overview and AI controls; preserve current API contract and review workflow. Add semantic tokens and responsive command-centre styling.
-- [ ] Group: regression tests first for search URL restoration and inquiry drafts. Centralize shared navigation/footer rendering in a repeatable build script; preserve source content/product data. Add refined hero, category discovery, explicit light/dark mode and accessible inquiry composer. Self-host fonts and responsive image variants. Preserve all 60 routes and add only useful company/contact routes.
-- [ ] Validation: full existing/new tests, focused lint plus full lint comparison, typecheck, production/static builds, browser workflow checks at desktop/mobile/tablet, accessibility scan and bounded performance comparison.
-- [ ] Documentation: final deliverable status matrix, changed files/commits, remaining live-provider checks, deployment checklist and rollback procedure; package review artifacts without publishing.
+- [x] Baseline: existing tests/typecheck/lint/build, route and record hashes, desktop/mobile captures and local lab timings.
+- [x] OS: pure briefing/Orbit state tests first; add reusable TolditOrbit, OrbitVoiceControls, voice hook and DailyBriefingPanel. Upgrade overview and AI controls; preserve current API contract and review workflow. Add semantic tokens and responsive command-centre styling.
+- [x] Group: regression tests first for search URL restoration and inquiry drafts. Centralize shared navigation/footer rendering in a repeatable build script; preserve source content/product data. Add refined hero, category discovery, explicit light/dark mode and accessible inquiry composer. Self-host fonts and responsive image variants. Preserve all 60 routes and add only useful company/contact routes.
+- [x] Validation: full existing/new tests, focused lint plus full lint comparison, typecheck, production/static builds, browser workflow checks at desktop/mobile/tablet, accessibility scan and bounded performance comparison.
+- [x] Documentation: final deliverable status matrix, changed files/commits, remaining live-provider checks, deployment checklist and rollback procedure; package review artifacts without publishing.
 
 ## Decisions
 - Existing static Group architecture wins over the older chat's initial Next.js scaffold: migration would replace working infrastructure.
