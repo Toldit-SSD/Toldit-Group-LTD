@@ -1,0 +1,1 @@
+(() => { document.documentElement.classList.add('js'); try { const saved = localStorage.getItem('toldit-theme-v1'); if (saved === 'dark' || saved === 'light') document.documentElement.dataset.theme = saved; } catch {} })();

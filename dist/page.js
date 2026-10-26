@@ -1,4 +1,3 @@
-const m=document.querySelector('#menu-toggle'),n=document.querySelector('#main-nav');function closeMenu(){m.setAttribute('aria-expanded','false');n.classList.remove('is-open')}m.addEventListener('click',()=>{const open=m.getAttribute('aria-expanded')!=='true';m.setAttribute('aria-expanded',String(open));n.classList.toggle('is-open',open)});n.addEventListener('click',closeMenu);document.addEventListener('click',e=>{if(!e.target.closest('header'))closeMenu()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.getAttribute('aria-expanded')==='true'){closeMenu();m.focus()}});matchMedia('(max-width:650px)').addEventListener('change',closeMenu);
 // Proposed format selection updates only the user's draft inquiry links.
 const inquiry=document.querySelector('.page-inquiry[data-product]');
 const format=document.querySelector('#planned-format');

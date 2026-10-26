@@ -1,0 +1,13 @@
+{
+  "name": "toldit-group",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {"sharp": "^0.34.0"}
+}
