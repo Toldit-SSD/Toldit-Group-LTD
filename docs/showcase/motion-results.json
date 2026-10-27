@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pause button receives clicks across desktop widths",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion changes and manual pause/resume settle correctly",
+    "pass": true
+  },
+  {
+    "name": "Offscreen motion stops and resumes on return",
+    "pass": true
+  },
+  {
+    "name": "Background visibility boundary suspends animation (browser fixture)",
+    "pass": true
+  },
+  {
+    "name": "Touch and constrained devices use non-animated alternatives",
+    "pass": true
+  },
+  {
+    "name": "Failed original product images retain their accessible alt fallback",
+    "pass": true
+  }
+]

@@ -3,6 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import {createHash} from 'node:crypto';
 import {navigation,footer,productCard,contactForm,escape,arrow,categoryLink} from './components.mjs';
+import {showcase} from './showcase.mjs';
 const products=vm.runInNewContext(await fs.readFile('dist/products.js','utf8')+'\nPRODUCTS');
 const originalHome=await fs.readFile('src/pages/index.html','utf8');
 const originalHead=originalHome.match(/<head>([\s\S]*?)<\/head>/)[1];
@@ -23,7 +24,8 @@ for(const file of files){
  html=html.replace(/<link rel="stylesheet" href="(?:\/?|\.\.\/)style\.css[^\"]*">/g,'<link rel="stylesheet" href="/style.css?v=20261026"><link rel="stylesheet" href="/design.css?v=20261026">');
  html=html.replace('<head>','<head><link rel="icon" type="image/svg+xml" href="/favicon.svg"><script src="/theme.js"></script><link rel="preload" href="/fonts/manrope-variable.woff" as="font" type="font/woff" crossorigin>');
  html=html.replace(/(<script[^>]+src=")[^\"]*(products|app|page|analytics)\.js[^\"]*(")/g,'$1/$2.js?v=20261026$3');
- html=html.replace('</body>','<script defer src="/site.js?v=20261026"></script></body>');
+ html=html.replace('</head>','<link rel="stylesheet" href="/showcase.css?v=20261026"></head>');
+ html=html.replace('</body>','<script defer src="/site.js?v=20261026"></script><script defer src="/showcase.js?v=20261026"></script></body>');
  html=html.replace(/<main(?![^>]*\bid=)/,'<main id="content"');
  html=html.replace(/<a class="skip"[^>]+>/,'<a class="skip" href="#content">');
  // Category and development labels carry useful information, but do not masquerade as headings.
@@ -37,11 +39,15 @@ for(const file of files){
   html=html.replace('<span id="results" aria-live="polite"></span>','<span id="results" aria-live="polite">Explore the collection</span>');
   html=html.replace(/<section id="contact"[\s\S]*?<\/section>/,`<section id="contact" class="closing-cta section" data-reveal><div><h2>Good things begin<br>with a conversation.</h2><p>Product questions, distribution ideas or a partnership in mind? Let’s explore the possibilities together.</p></div><div class="closing-actions"><a class="button" href="/contact/">Contact Toldit Group ${arrow}</a><a class="text-link" href="/contact/?interest=Quotation">Request a quotation ${arrow}</a></div></section>`);
   html=html.replace('<script src="/app.js','<script src="/catalog-core.js"></script><script src="/app.js');
+  // Keep the previous approved copy verbatim while replacing its visual composition.
+  const heroCopy=html.match(/<section class="premium-hero"><div class="hero-copy">([\s\S]*?)<\/div><figure/)[1];
+  html=html.replace(/<section class="premium-hero">[\s\S]*?<\/section>/,showcase(products,heroCopy));
+  html=html.replace('<body>','<body class="page-home">');
  }
  const product=products.find(p=>p.url===route);
  if(product)html=html.replace('<div class="contact-links">',`<a class="quote-link" href="/contact/?interest=Quotation&amp;product=${encodeURIComponent(product.name)}">Prepare a detailed enquiry ${arrow}</a><div class="contact-links">`);
  html=html.replace(/<img\b[^>]*src="(\/?assets\/[^\"]+\.webp)"[^>]*>/g,(tag,src)=>{
-  if(tag.includes('srcset='))return tag;
+  if(tag.includes('srcset=') || src.includes('/responsive/'))return tag;
   const base=src.replace(/^\/?assets\//,'').replace(/\//g,'-').replace(/\.webp$/,'');
   const hero=src.endsWith('/hero.webp');
   return tag.replace(/src="[^"]+"/,`src="/assets/responsive/${base}-${hero?1280:800}.webp" srcset="/assets/responsive/${base}-480.webp 480w, /assets/responsive/${base}-800.webp 800w${hero?`, /assets/responsive/${base}-1280.webp 1280w`:''}" sizes="${hero?'(max-width:900px) 100vw, 50vw':'(max-width:600px) 90vw, 45vw'}" decoding="async"`);

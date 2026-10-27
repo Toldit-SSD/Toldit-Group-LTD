@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Homepage 320px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 375px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 390px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 768px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 1024px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 1280px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 1440px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Homepage 1920px layout and images",
+    "pass": true
+  },
+  {
+    "name": "Foreground paints over the true perspective ring",
+    "pass": true
+  },
+  {
+    "name": "Motion starts, pauses, resumes, stops offscreen and honors reduced motion",
+    "pass": true
+  },
+  {
+    "name": "Mobile outside click, Escape, focus return and keyboard product links",
+    "pass": true
+  },
+  {
+    "name": "Missing images preserve names, links and layout",
+    "pass": true
+  },
+  {
+    "name": "Landscape and 200% zoom-equivalent reflow",
+    "pass": true
+  },
+  {
+    "name": "Page families at 320px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 375px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 390px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 768px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 1024px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 1280px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Page families at 1920px",
+    "pass": true
+  },
+  {
+    "name": "Browser console remains free of errors",
+    "pass": true
+  }
+]

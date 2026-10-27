@@ -6,7 +6,7 @@ const matchesSearch = TolditCatalog.matchesSearch;
 function restoreCatalogue(){const state=TolditCatalog.readState(location.search,PRODUCTS);category=state.category;$('#search').value=state.query;$('#catalog-sort').value=state.sort;}
 function saveCatalogue(){const url=new URL(location.href);const state={query:$('#search').value,category,sort:$('#catalog-sort').value};const params=new URLSearchParams(TolditCatalog.searchParams(state));for(const key of ['q','category','sort']){params.has(key)?url.searchParams.set(key,params.get(key)):url.searchParams.delete(key)}history.replaceState(null,'',url);}
 const categories=['All products',...new Set(PRODUCTS.map(p=>p.category))];
-function animate(el,frames,options={}) {if(reduced.matches||!el.animate)return;const a=el.animate(frames,{duration:260,easing:'cubic-bezier(.2,.7,.2,1)',...options});return a;}
+function animate(el,frames,options={}) {if(reduced.matches||!el?.animate)return;const a=el.animate(frames,{duration:260,easing:'cubic-bezier(.2,.7,.2,1)',...options});return a;}
 function imagePath(path,width){return '/assets/responsive/'+path.replace(/^\/?assets\//,'').replace(/\//g,'-').replace(/\.webp$/,'')+'-'+width+'.webp'}
 function artwork(p){return p.image?`<img src="${escape(imagePath(p.image,480))}" srcset="${escape(imagePath(p.image,480))} 480w, ${escape(imagePath(p.image,800))} 800w" sizes="(max-width: 600px) 46vw, (max-width: 1000px) 31vw, 23vw" alt="${escape(p.name)} — Toldit branded concept render" width="800" height="800" loading="lazy" decoding="async">`:`<div class="placeholder"><b>TOLDIT</b><span>${escape(p.name)}</span></div>`;}
 $('#filters').innerHTML=categories.map(c=>`<button aria-pressed="false" data-filter="${escape(c)}">${escape(c)}</button>`).join('');

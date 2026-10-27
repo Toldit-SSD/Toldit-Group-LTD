@@ -1,5 +1,7 @@
 # Toldit Group LTD
 
+The product-showcase redesign and motion/error fixes are documented in [the current validation report](docs/showcase/STATUS.md). The existing static architecture, product records and routes are preserved. Production publication requires approval of the final preview.
+
 The existing commercial website, upgraded on its original static infrastructure. All 55 product/venture records and 60 original routes are preserved. The build adds company and contact pages, responsive shared navigation/footer, a searchable catalog, light/dark appearance and honest enquiry drafts.
 
 The earlier Next.js scaffold request was superseded by the master directive to preserve and upgrade existing infrastructure. This repository remains static HTML/CSS/JavaScript; Toldit OS retains its existing Next-compatible TypeScript application. There is no invented administration backend or authentication system here.

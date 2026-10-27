@@ -1,0 +1,170 @@
+[
+  {
+    "name": "group-before",
+    "size": "desktop",
+    "run": 0,
+    "lcp": 1384,
+    "cls": 0.0023893254183545527,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 351637,
+    "js": 38340
+  },
+  {
+    "name": "group-before",
+    "size": "desktop",
+    "run": 1,
+    "lcp": 1256,
+    "cls": 0.0023893254183545527,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 351637,
+    "js": 38340
+  },
+  {
+    "name": "group-before",
+    "size": "desktop",
+    "run": 2,
+    "lcp": 1364,
+    "cls": 0.0023893254183545527,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 351637,
+    "js": 38340
+  },
+  {
+    "name": "group-before",
+    "size": "mobile",
+    "run": 0,
+    "lcp": 1192,
+    "cls": 0.0770143619922376,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 290543,
+    "js": 38340
+  },
+  {
+    "name": "group-before",
+    "size": "mobile",
+    "run": 1,
+    "lcp": 1220,
+    "cls": 0.0770143619922376,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 246631,
+    "js": 38340
+  },
+  {
+    "name": "group-before",
+    "size": "mobile",
+    "run": 2,
+    "lcp": 1232,
+    "cls": 0.0770143619922376,
+    "interactions": [],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 246631,
+    "js": 38340
+  },
+  {
+    "name": "group-after",
+    "size": "desktop",
+    "run": 0,
+    "lcp": 1284,
+    "cls": 0.027823449149426117,
+    "interactions": [
+      64,
+      64,
+      64
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 380859,
+    "js": 42677
+  },
+  {
+    "name": "group-after",
+    "size": "desktop",
+    "run": 1,
+    "lcp": 1344,
+    "cls": 0.027823449149426117,
+    "interactions": [
+      88,
+      88,
+      88
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 380859,
+    "js": 42677
+  },
+  {
+    "name": "group-after",
+    "size": "desktop",
+    "run": 2,
+    "lcp": 1276,
+    "cls": 0.027823449149426117,
+    "interactions": [
+      80,
+      80,
+      80
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 380859,
+    "js": 42677
+  },
+  {
+    "name": "group-after",
+    "size": "mobile",
+    "run": 0,
+    "lcp": 1240,
+    "cls": 0.0006414988156158229,
+    "interactions": [
+      56,
+      56,
+      56
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 300457,
+    "js": 42677
+  },
+  {
+    "name": "group-after",
+    "size": "mobile",
+    "run": 1,
+    "lcp": 1264,
+    "cls": 0.0006414988156158229,
+    "interactions": [
+      56,
+      56,
+      56
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 300457,
+    "js": 42677
+  },
+  {
+    "name": "group-after",
+    "size": "mobile",
+    "run": 2,
+    "lcp": 1300,
+    "cls": 0.0006414988156158229,
+    "interactions": [
+      56,
+      56,
+      56
+    ],
+    "title": "TOLDIT Group — Everyday essentials. Greater possibilities.",
+    "h1": "Everyday essentials.Greater possibilities.",
+    "bytes": 300457,
+    "js": 42677
+  }
+]

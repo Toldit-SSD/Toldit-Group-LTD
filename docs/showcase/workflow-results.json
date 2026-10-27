@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Group search, category, sort, reload, empty/reset and progressive catalog",
+    "pass": true
+  },
+  {
+    "name": "Group product format and quotation preserve product context",
+    "pass": true
+  },
+  {
+    "name": "Group form validates errors, prepares encoded drafts, never submits a request",
+    "pass": true
+  },
+  {
+    "name": "Group dark appearance persists and product origin text remains accessible",
+    "pass": true
+  },
+  {
+    "name": "Group mobile navigation, disclosure, Escape and category destination",
+    "pass": true
+  },
+  {
+    "name": "Group all 62 routes return 200",
+    "pass": true
+  },
+  {
+    "name": "Group no-JavaScript catalog and contact fallbacks",
+    "pass": true
+  }
+]
