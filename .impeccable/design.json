@@ -1,1 +1,55 @@
-{"project":"Toldit Group","version":1,"source":"DESIGN.md","implementation":"dist/design.css","intent":"Credible consumer product discovery and enquiries","tokens":{"lightSurface":"#f5f3ed","darkSurface":"#111713","text":"#1c2923","gold":"#86622d","cyan":"#176673","font":"Manrope","controlMin":44,"radius":6},"motion":{"reducedMotion":true,"contentVisibleBeforeAnimation":true},"references":"docs/design-references.md"}
+{
+  "project": "Toldit Group",
+  "version": 2,
+  "source": "DESIGN.md",
+  "implementation": "dist/showcase.css",
+  "foundation": "dist/design.css",
+  "intent": "Credible consumer product discovery and enquiries using Toldit's existing forest, paper and gold identity",
+  "tokens": {
+    "brand": {"forest":"#071411","forestSecondary":"#10221d","forestRaised":"#173029","ivory":"#f5f1e8","sage":"#b9c5bd","champagne":"#c5a15b","champagneHighlight":"#e9d8af","teal":"#5f9f94"},
+    "light": {"surface":"#f4f0e7","panel":"#fcfaf4","ink":"#17251f","muted":"#58665d","border":"#cdd1c6","gold":"#795923","focus":"#286c60","interactionHover":"#e6decd","interactionActive":"#173029","interactionDisabled":"#7d897f","error":"#a92d24","brandInk":"#1c2923"},
+    "dark": {"surface":"#10221d","panel":"#173029","ink":"#f5f1e8","muted":"#b9c5bd","border":"#496056","gold":"#e9d8af","focus":"#b6d7ca","interactionHover":"#234238","interactionActive":"#c5a15b","interactionDisabled":"#81978a","error":"#ffb5a7","brandInk":"#f0f1e9"},
+    "cyanAlias": "focus",
+    "heroFocus": "#e9d8af",
+    "font": "Manrope",
+    "fontFallbacks": ["Arial", "sans-serif"],
+    "fontWeights": [200, 800],
+    "fontDisplay": "swap",
+    "controlMin": 44,
+    "primaryButtonMin": 48,
+    "radius": 12,
+    "gutter": "clamp(20px, 5vw, 96px)"
+  },
+  "branding": {
+    "preserveWordmarkTypographySizingSpacingAndThemeColors": true,
+    "preservePackagingImageryAndColors": true,
+    "foregroundSurface": "#f4f0e7",
+    "foregroundInk": "#17251f"
+  },
+  "motion": {
+    "implementation": "dist/showcase.js",
+    "reducedMotion": true,
+    "contentVisibleBeforeAnimation": true,
+    "decorativeRingAriaHidden": true,
+    "uniqueProductCount": 8,
+    "transformUpdateFpsCap": 30,
+    "requires3dSupport": true,
+    "compactQuery": "(max-width: 900px), (pointer: coarse)",
+    "compactPresentation": "Static horizontal product list",
+    "reducedMotionPresentation": "Static desktop composition with motion control hidden",
+    "pauseForReducedMotionSaveDataOrLowCapacity": true,
+    "lowCapacityThreshold": {"cpuCores": 4, "deviceMemoryGB": 4},
+    "pauseWhenOffscreenOrDocumentHidden": true,
+    "pauseOnPageHide": true,
+    "manualPauseSurvivesMediaAndVisibilityChanges": true,
+    "frameLoopSynchronizesStateChanges": true,
+    "controlPosition": "Above the ring, clear of the foreground panel"
+  },
+  "imageRecovery": {
+    "supportedHolderMessage": "Image unavailable",
+    "preserveNativeAltFallbackOutsideSupportedHolders": true
+  },
+  "references": "docs/design-references.md",
+  "direction": "docs/showcase/DIRECTION.md",
+  "validation": "docs/showcase/STATUS.md"
+}

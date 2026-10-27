@@ -48,6 +48,18 @@ All products remain in development; supplied imagery includes illustrative/AI-ge
 
 ## Preview and release
 
-Actual settled desktop/mobile captures and full-page evidence are in `/workspace/toldit-group-preview/`. Hosted preview publication is a separate **Preview** deployment of the existing Vercel project; production approval is still required. Deployment details will be recorded after the provider returns a verified result.
+**Preview build: COMPLETE.** [Open the Toldit Group preview](https://toldit-group-ojigasd1j-toldits-projects.vercel.app/). Vercel sign-in with an account authorized for Toldit's projects is required. The deployment was created by the existing Git integration on the existing `toldit-group` project, in the **Preview** environment. Production approval is still required.
+
+- Application commit: `4879bb63f98fb89d6955c349478f586c562bda3e`, pushed to `codex/group-showcase-2026-10-26`.
+- GitHub deployment: `7358134678`, environment `Preview`, status `success` / “Deployment has completed”. Vercel's commit check also reports success.
+- [Vercel deployment details](https://vercel.com/toldits-projects/toldit-group/6GfDEndwVAgtuBiYw5qNNjzsqFru).
+- Fresh bounded review passed after the image fallback fix and settled screenshot captures; no remaining blocker was identified in the reviewed changes.
+- Actual settled desktop/mobile captures and full-page evidence are in `/workspace/toldit-group-preview/`.
+
+**Hosted browser verification and anonymous sharing: BLOCKED by access.** An unauthenticated request reaches Vercel's login page. The native Vercel sharing tool returned `404` at `lookup_deployment`: “The deployment could not be found, or your Vercel connection may not have access to it.” The URL and successful deployment are independently verified through GitHub's deployment record. No protection settings were weakened and no alternate project was created. All browser checks above used the exact local application output; authenticated checks on the hosted URL remain outstanding.
+
+To review now, open the preview URL and sign into the Vercel account with access to Toldit's projects. To share without sign-in, an authorized project owner can open the deployment's **Share** control and create a deployment-specific shareable link. Extending the Vercel connector's authorization to the correct team/project would also permit another attempt through the sharing tool; no access grant is assumed.
 
 Rollback before release: `rollback/group-before-showcase-2026-10-26` restores the preceding local checkout. For any approved production release, first record the active production deployment and roll back to that deployment if needed. The local tag and live production baseline are different. Do not change domains or database state.
+
+At handoff, the recorded production deployment remains `dpl_BqnXKU41SAktJT1FNCyMswmdnm21` and the production Git branch remains `d7c9301c94bb5b224e5edae19b7885942e6103de`. After preview approval, stage the approved commit for production without assigning domains, verify the staged production output, then promote that tested deployment. Reassign the recorded prior deployment if rollback is required; there are no database migrations.
